@@ -32,6 +32,7 @@ class TodoListRepository {
 
   createTodo(todoBody) {
     //实现创建新todo纪录的方法
+    
   }
 
   updateTodo(id, update) {
@@ -40,6 +41,15 @@ class TodoListRepository {
 
   deleteTodoBy(id) {
     //实现通过id来删除todo纪录的方法
+    for(var i = 0;i<this.todoList.length;i++)
+    {
+        if(this.todoList[i].id == id)
+        {
+            this.todoList.splice(i,1);
+            return "Delete ID:" + id;
+        }          
+    }
+    return "No This ID:" + id;
   }
 }
 
