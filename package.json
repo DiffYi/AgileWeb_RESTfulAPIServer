@@ -1,0 +1,16 @@
+{
+  "name": "todolistapi",
+  "version": "1.0.0",
+  "description": "CRUD api for todo list",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~4.0.0",
+    "body-parser": "~1.18.3"
+  },
+  "scripts": {
+    "test": "echo \"Error, no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "wuyi",
+  "license": "ISC"
+}
