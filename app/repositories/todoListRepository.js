@@ -4,19 +4,30 @@ let currentId = 0;
 
 class TodoListRepository {
   constructor() {
-    const todo1 = new Todo(++currentId, "todo1", "todo1 desc");
-    const todo2 = new Todo(++currentId, "todo2", "todo2 desc");
+    const todo1 = new Todo(++currentId, "JZP", "JiaZhanPei");
+    const todo2 = new Todo(++currentId, "HA", "Hu An");
     todo1.isFinished = true;
     this.todoList = [todo1, todo2];
   }
 
   listAllTodos() {
     //实现查看所有todos的方法
-    return ["1","2","abc"];
+    var strArray = [];
+    for(var i = 0;i<this.todoList.length;i++)
+    {
+        strArray.push("id:"+this.todoList[i].id+" name:"+this.todoList[i].name+" description:"+this.todoList[i].description);
+    }
+    return strArray;
   }
 
   findTodoBy(id) {
     //实现通过id查看具体todo的方法
+    for(var i = 0;i<this.todoList.length;i++)
+    {
+        if(this.todoList[i].id == id)
+            return "id:"+this.todoList[i].id+" name:"+this.todoList[i].name+" description:"+this.todoList[i].description;
+    }
+    return "No This ID:" + id;
   }
 
   createTodo(todoBody) {
